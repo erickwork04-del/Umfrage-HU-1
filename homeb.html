@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Umfrage HU - Variante B</title>
+  <script type="module" src="./indexb.js"></script>
+  <link rel="stylesheet" href="basic.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h5>Fragebogen-HU</h5>
+</div>
+
+<div class="spacer"></div>
+
+<div class="card"> 
+    <!-- Frage Section -->
+    <div class="card upper">
+        <p>Frage</p>
+        <h4 id="Frage"></h4>
+    </div>
+    
+    <!-- Button Section (OHNE Würfel) -->
+    <div class="card middle">
+        <div class="buttoncontainer">
+            <button class="incorrect_button" id="2">Nein</button>
+            <button class="correct_button" id="1">Ja</button>
+        </div>
+    </div>
+    
+    <!-- Progress Section -->
+    <div class="card bottom">
+        <div class="progress-wrapper">
+            <button class="back-button">Zurück</button>
+            <div id="progressContainer">
+                <div id="progressBar"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="spacersmall"></div>
+
+<!-- Error Message -->
+<div id="errorMessage"></div>
+
+<!-- Debug: Antworten Liste -->
+<div id="antwortenListe" style="display: none;"></div>
+
+</body>
+</html>

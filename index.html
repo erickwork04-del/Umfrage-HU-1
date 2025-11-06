@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Umfrage HU - Willkommen</title>
+  <link rel="stylesheet" href="basic.css">
+  <style>
+    .welcome-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      padding: 40px 24px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .welcome-title {
+      font-family: 'Inter Display', sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 44px;
+      letter-spacing: -0.03em;
+      color: #1A1A1A;
+      margin-bottom: 20px;
+    }
+
+    .welcome-text {
+      font-family: 'Inter Display', sans-serif;
+      font-size: 18px;
+      line-height: 28px;
+      color: #666666;
+      margin-bottom: 40px;
+      max-width: 500px;
+    }
+
+    .welcome-info {
+      background: #F0F8FF;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      border: 1px solid #4DC1FF;
+    }
+
+    .welcome-info p {
+      font-family: 'Inter Display', sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      color: #1A1A1A;
+      margin: 8px 0;
+    }
+
+    .start-button {
+      font-family: 'Inter Display', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: -0.01em;
+      color: #FFFFFF;
+      background: linear-gradient(135deg, #4DC1FF 0%, #3AABEF 100%);
+      padding: 18px 48px;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(77, 193, 255, 0.3);
+    }
+
+    .start-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(77, 193, 255, 0.4);
+    }
+
+    .start-button:active {
+      transform: translateY(-1px);
+    }
+
+    .icon {
+      font-size: 64px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <h5>Fragebogen-HU</h5>
+</div>
+
+<div class="welcome-container">
+  <div class="icon">📋</div>
+  
+  <h1 class="welcome-title">Willkommen zur Umfrage</h1>
+  
+  <p class="welcome-text">
+    Vielen Dank für Ihre Teilnahme an unserer Studie. 
+    Die Umfrage dauert ca. 5 Minuten und ist anonym.
+  </p>
+
+  <div class="welcome-info">
+    <p><strong>📝 6 Fragen</strong> beantworten</p>
+    <p><strong>⏱️ ~5 Minuten</strong> Zeitaufwand</p>
+    <p><strong>🔒 Anonym</strong> und vertraulich</p>
+  </div>
+
+  <button class="start-button" onclick="startSurvey()">
+    Umfrage starten
+  </button>
+</div>
+
+<script>
+  function startSurvey() {
+    // A/B Test: 50/50 Zuordnung
+    const randomValue = Math.random();
+    
+    // Speichere die Variante für spätere Auswertung
+    const variant = randomValue < 0.5 ? 'A' : 'B';
+    sessionStorage.setItem('surveyVariant', variant);
+    sessionStorage.setItem('surveyStartTime', new Date().toISOString());
+    
+    console.log('A/B Test Variante:', variant);
+    
+    // Weiterleitung basierend auf Variante
+    if (variant === 'A') {
+      // Variante A: MIT Würfel
+      window.location.href = 'home.html';
+    } else {
+      // Variante B: OHNE Würfel
+      window.location.href = 'homeb.html';
+    }
+  }
+</script>
+
+</body>
+</html>

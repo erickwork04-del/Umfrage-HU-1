@@ -1,0 +1,394 @@
+body {
+    background-color: #F5F5F5;
+    font-family: 'Inter Display', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 16px 20px;
+    width: 100%;
+    min-width: 100vw;
+    max-width: 393px;
+    background: #FFFFFF;
+    border-bottom: 1px solid #E8E8E8;
+    box-sizing: border-box;
+}
+
+.navbar h5 {
+    font-family: 'Inter Display', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    color: #1A1A1A;
+    margin: 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    width: 100%;
+    max-width: 90vw;
+    margin: 0px auto;
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    border-radius: 16px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* Card Upper Section - Frage */
+.card.upper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 24px;
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border-radius: 16px 16px 0 0;
+}
+
+.card.upper p {
+    font-family: 'Inter Display', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #666666;
+    margin: 0;
+}
+
+
+.card.upper h4 {
+    font-family: 'Inter Display', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: -0.03em;
+    color: #1A1A1A;
+    margin: 0;
+    width: 100%;
+}
+
+/* Card Middle Section - Würfel */
+.card.middle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 24px;
+    width: fikl;
+    border-top: 1px solid #E8E8E8;
+    box-sizing: border-box;
+    border-radius: 0px;
+}
+
+.dice-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+
+.dice-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.dice-container h4 {
+    font-family: 'Inter Display', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #666666;
+    margin: 0;
+}
+
+.dice-container p {
+    font-family: 'Inter Display', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 14px;
+    color: #999999;
+    margin: 0;
+}
+
+.dice-result {
+    font-family: 'Inter Display', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -0.04em;
+    color: #1A1A1A;
+    margin: 0;
+}
+
+/* Würfel Button */
+#würfelbutton {
+    font-family: 'Inter Display', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #FF3B30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 16px;
+    background: transparent;
+    border: 2px solid rgba(255, 59, 48, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#würfelbutton:hover {
+    background: rgba(255, 59, 48, 0.05);
+    border-color: rgba(255, 59, 48, 0.4);
+}
+
+#würfelbutton:active {
+    transform: scale(0.98);
+}
+
+/* Card Down Section - Buttons */
+.card.down {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 24px;
+    width: 100%;
+    border-top: 1px solid #E8E8E8;
+    box-sizing: border-box;
+}
+
+/* Button Container */
+.buttoncontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+/* Buttons */
+.correct_button,
+.incorrect_button {
+    font-family: 'Inter Display', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+    min-width: 110px;
+}
+
+.correct_button:hover,
+.incorrect_button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.correct_button:active,
+.incorrect_button:active {
+    transform: translateY(0);
+}
+
+.correct_button:disabled,
+.incorrect_button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Ja Button - Blau */
+.correct_button {
+    background: linear-gradient(135deg, #4DC1FF 0%, #3AABEF 100%);
+}
+
+/* Nein Button - Gelb */
+.incorrect_button {
+    background: linear-gradient(135deg, #FFD84D 0%, #FFC933 100%);
+}
+
+/* Card Bottom Section - Progress */
+.card.bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 24px;
+    width: 100%;
+    border-top: 1px solid #E8E8E8;
+    border-radius: 0 0 16px 16px;
+    box-sizing: border-box;
+}
+
+/* Progress Container */
+.progress-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+/* Zurück Button */
+.back-button {
+    font-family: 'Inter Display', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #666666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 14px;
+    background: transparent;
+    border: 2px solid #E8E8E8;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.back-button:hover {
+    background: #F5F5F5;
+    border-color: #DDDDDD;
+}
+
+.back-button:active {
+    transform: scale(0.98);
+}
+
+/* Progress Bar Container */
+#progressContainer {
+    flex-grow: 1;
+    height: 24px;
+    background: #F0F0F0;
+    border: 1px solid #E8E8E8;
+    border-radius: 12px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Progress Bar */
+#progressBar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #83FF78 0%, #5FE054 100%);
+    border-radius: 12px;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+}
+
+/* Error Message */
+#errorMessage {
+    font-family: 'Inter Display', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #FF3B30;
+    background: rgba(255, 59, 48, 0.1);
+    padding: 14px 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 0 auto 20px;
+    display: none;
+    max-width: 345px;
+    border: 1px solid rgba(255, 59, 48, 0.2);
+}
+
+/* Antworten Liste - versteckt */
+#antwortenListe {
+    display: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 393px) {
+    .navbar {
+        max-width: 100%;
+    }
+    
+    .card {
+        max-width: calc(100% - 32px);
+        margin: 16px;
+    }
+    
+    .card.upper h4 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    
+    .dice-result {
+        font-size: 42px;
+        line-height: 48px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .buttoncontainer {
+        gap: 12px;
+    }
+    
+    .correct_button,
+    .incorrect_button {
+        padding: 12px 24px;
+        min-width: 90px;
+        font-size: 15px;
+    }
+    
+    .card.middle {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    
+    #würfelbutton {
+        width: 100%;
+    }
+}
+
+.spacer{
+    height: 5vh;
+    width: 100%;
+}
+
+.spacersmall{
+    height: 3vh;
+    width: 100%;
+}
